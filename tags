@@ -1,0 +1,50 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BadData	src/test/scala/testExample.scala	/^  case class BadData[A,B](data: Either[A,B]) extends TestData[A,B]$/;"	c
+CATS	src/main/scala/EssentialScala.scala	/^object CATS { $/;"	c
+Cat	src/main/scala/EssentialScala.scala	/^  case class Cat (colour: String, sound: String) extends Feline {$/;"	c
+Feline	src/main/scala/EssentialScala.scala	/^  sealed trait Feline {$/;"	t
+Globals	src/main/scala/Globals.scala	/^object Globals {$/;"	c
+GoodData	src/test/scala/testExample.scala	/^  case class GoodData[A,B](data: Either[A,B]) extends TestData[A,B]$/;"	c
+Leaf	src/main/scala/EssentialScala.scala	/^      case class Leaf(n: Int) extends Tree $/;"	c
+Lion	src/main/scala/EssentialScala.scala	/^  case class Lion (colour: String, sound: String, maneSize: Int) extends Feline {$/;"	c
+Node	src/main/scala/EssentialScala.scala	/^      case class Node(left: Tree, right: Tree) extends Tree $/;"	c
+PRACTICE	src/main/scala/EssentialScala.scala	/^object PRACTICE {$/;"	c
+TestData	src/test/scala/testExample.scala	/^  sealed trait TestData[A,B] {$/;"	t
+Tree	src/main/scala/EssentialScala.scala	/^  trait Tree {$/;"	t
+VERSIONS	project/versions.scala	/^object VERSIONS {$/;"	c
+_f	src/main/scala/EssentialScala.scala	/^      lazy val _f  = for {$/;"	l
+_m	src/main/scala/EssentialScala.scala	/^      lazy val _m = _map(ls, println)$/;"	l
+_map	src/main/scala/EssentialScala.scala	/^      def _map[A,B](xs: List[A], f: A=>B): List[B]= {$/;"	m
+amm	target/scala-2.12/src_managed/test/amm.scala	/^object amm extends App { $/;"	c
+ammonite	project/versions.scala	/^  def ammonite = "1.8.1"$/;"	m
+app	project/versions.scala	/^  def app = "0.1"$/;"	m
+colour	src/main/scala/EssentialScala.scala	/^    def colour: String$/;"	m
+com.app.globals	src/main/scala/Globals.scala	/^package com.app.globals$/;"	p
+data	src/test/scala/testExample.scala	/^    def data: Either[A, B]$/;"	m
+leaf	src/main/scala/EssentialScala.scala	/^      val leaf = Leaf(1)$/;"	l
+lion_massive	src/main/scala/EssentialScala.scala	/^    val lion_massive = Lion("blue", "roar", 10)$/;"	l
+lion_tiny	src/main/scala/EssentialScala.scala	/^    val lion_tiny = Lion("golden", "roar", 5) $/;"	l
+ls	src/main/scala/EssentialScala.scala	/^      val ls = (1 to 10).toList$/;"	l
+mtest	src/main/scala/EssentialScala.scala	/^      def mtest (i: Int): String = i match {$/;"	m
+node	src/main/scala/EssentialScala.scala	/^      val node = Node(leaf, leaf)$/;"	l
+one	src/main/scala/Globals.scala	/^  val one = 1$/;"	l
+playground	src/test/scala/testExample.scala	/^package playground$/;"	p
+print	src/main/scala/EssentialScala.scala	/^    def print = println(s"this is a $colour cat, it says $sound")$/;"	m
+print	src/main/scala/EssentialScala.scala	/^    def print = println(s"this is a $colour lion, it says $sound. behold his ${if (maneSize < 10) "tiny" else "massive"} mane!  ")$/;"	m
+print	src/main/scala/EssentialScala.scala	/^    def print: Unit$/;"	m
+resLeaf	src/main/scala/EssentialScala.scala	/^      val resLeaf = leaf.sum()$/;"	l
+resLeafNode	src/main/scala/EssentialScala.scala	/^      val resLeafNode = leaf.sum(node)$/;"	l
+resNode	src/main/scala/EssentialScala.scala	/^      val resNode = node.sum()$/;"	l
+run	src/main/scala/EssentialScala.scala	/^  def run {$/;"	m
+scala	project/versions.scala	/^  def scala = "2.12.10"$/;"	m
+scalatest	project/versions.scala	/^  def scalatest = "3.0.5"$/;"	m
+sound	src/main/scala/EssentialScala.scala	/^    def sound: String$/;"	m
+sum	src/main/scala/EssentialScala.scala	/^    def sum(tree: Tree = this): Int = tree match {$/;"	m
+testData	src/test/scala/testExample.scala	/^    val testData = BadData(Left(0))$/;"	l
+testData	src/test/scala/testExample.scala	/^    val testData = GoodData(Right(1))$/;"	l
+theTests	src/test/scala/testExample.scala	/^class theTests extends FunSuite with MustMatchers with TypeCheckedTripleEquals {$/;"	c
