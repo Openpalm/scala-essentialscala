@@ -1,6 +1,6 @@
 //package io.underscore.essential.scala
 
-object PRACTICE {
+object TREES {
 
   trait Tree {
     def sum(tree: Tree = this): Int = tree match {
@@ -8,8 +8,8 @@ object PRACTICE {
       case Node(left, right) => sum(left) + sum(right)
     }
   }
-      case class Leaf(n: Int) extends Tree 
-      case class Node(left: Tree, right: Tree) extends Tree 
+      case class Leaf(n: Int) extends Tree
+      case class Node(left: Tree, right: Tree) extends Tree
 
       val leaf = Leaf(1)
       val node = Node(leaf, leaf)
@@ -25,7 +25,7 @@ object PRACTICE {
 
       lazy val _f  = for {
         xs <- List(1 to 5)
-        x <- xs 
+        x <- xs
       } yield println(mtest(x))
 
 
@@ -40,19 +40,27 @@ object PRACTICE {
       val ls = (1 to 10).toList
       lazy val _m = _map(ls, println)
 
-
 }
 
-object CATS { 
+object CATS {
 
   def run {
-    val lion_massive = Lion("blue", "roar", 10)
-    lion_massive.print
-    val lion_tiny = Lion("golden", "roar", 5) 
-    lion_tiny.print
+
+    trait lionData {
+      def colour: String
+      def sound: String
+      def maneSize: Int
+    }
+
+  val lion_massive = Lion("blue", "roar", 10)
+  val lion_tiny = Lion("golden", "roar", 5)
+
+  lion_massive.print
+  lion_tiny.print
+
   }
 
-  sealed trait Feline {
+  trait Feline {
     def colour: String
     def sound: String
     def print: Unit
@@ -65,5 +73,39 @@ object CATS {
   }
 }
 
-CATS.run
 
+object TraitsAndOtherAnimals {
+  //P94+
+  import java.util.Date
+
+  def run {
+    def wait = Thread.sleep(1000)
+    val tom  = {
+      wait
+      User(1)
+    }
+    val bill = {
+      wait
+      User(2)
+    }
+    val simpleMonadicPrint: Any => Option[Unit] = s => Some(println(s))
+    for {
+      a <- tom.age //opt Long
+      b <- bill.age //opt Long
+      _  <- simpleMonadicPrint((a,b)) //opt any
+    } yield ()
+  }
+
+  sealed trait Visitor {
+    def id: Int
+    def createdAt: Date
+    def age: Option[Long] = Some(new Date().getTime() - createdAt.getTime())
+  }
+
+  final case class User      (id: Int, createdAt: Date = new Date()) extends Visitor
+  final case class Anonymous (id: Int, createdAt: Date = new Date()) extends Visitor
+
+}
+
+CATS.run
+TraitsAndOtherAnimals.run
