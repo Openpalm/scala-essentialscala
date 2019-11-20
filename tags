@@ -8,12 +8,19 @@ Anonymous	src/main/scala/EssentialScala.scala	/^  final case class Anonymous (id
 BadData	src/test/scala/testExample.scala	/^  case class BadData[A,B](data: Either[A,B]) extends TestData[A,B]$/;"	c
 CATS	src/main/scala/EssentialScala.scala	/^object CATS {$/;"	c
 Cat	src/main/scala/EssentialScala.scala	/^  case class Cat (colour: String, sound: String) extends Feline {$/;"	c
+Circle	src/main/scala/Shapes.scala	/^  final case class Circle(radius: Long) extends Shape {$/;"	c
 Feline	src/main/scala/EssentialScala.scala	/^  trait Feline {$/;"	t
 Globals	src/main/scala/Globals.scala	/^object Globals {$/;"	c
 GoodData	src/test/scala/testExample.scala	/^  case class GoodData[A,B](data: Either[A,B]) extends TestData[A,B]$/;"	c
 Leaf	src/main/scala/EssentialScala.scala	/^      case class Leaf(n: Int) extends Tree$/;"	c
 Lion	src/main/scala/EssentialScala.scala	/^  case class Lion (colour: String, sound: String, maneSize: Int) extends Feline {$/;"	c
 Node	src/main/scala/EssentialScala.scala	/^      case class Node(left: Tree, right: Tree) extends Tree$/;"	c
+Printable	src/main/scala/Shapes.scala	/^  trait Printable { $/;"	t
+Rectangle	src/main/scala/Shapes.scala	/^  final case class Rectangle(sideA: Double, sideB: Double) extends Rectangular$/;"	c
+Rectangular	src/main/scala/Shapes.scala	/^  sealed trait Rectangular extends Shape {$/;"	t
+Shape	src/main/scala/Shapes.scala	/^  sealed trait Shape extends Printable {$/;"	t
+Shapes	src/main/scala/Shapes.scala	/^object Shapes { $/;"	c
+Square	src/main/scala/Shapes.scala	/^  final case class Square(side: Double) extends Rectangular {$/;"	c
 TREES	src/main/scala/EssentialScala.scala	/^object TREES {$/;"	c
 TestData	src/test/scala/testExample.scala	/^  sealed trait TestData[A,B] {$/;"	t
 TraitsAndOtherAnimals	src/main/scala/EssentialScala.scala	/^object TraitsAndOtherAnimals {$/;"	c
@@ -28,6 +35,9 @@ age	src/main/scala/EssentialScala.scala	/^    def age: Option[Long] = Some(new D
 amm	target/scala-2.12/src_managed/test/amm.scala	/^object amm extends App { $/;"	c
 ammonite	project/versions.scala	/^  def ammonite = "1.8.1"$/;"	m
 app	project/versions.scala	/^  def app = "0.1"$/;"	m
+area	src/main/scala/Shapes.scala	/^    def area: Double$/;"	m
+area	src/main/scala/Shapes.scala	/^    val area = Pi * Math.pow(radius,2)$/;"	l
+area	src/main/scala/Shapes.scala	/^    val area = sideA * sideB$/;"	l
 bill	src/main/scala/EssentialScala.scala	/^    val bill = {$/;"	l
 colour	src/main/scala/EssentialScala.scala	/^      def colour: String$/;"	m
 colour	src/main/scala/EssentialScala.scala	/^    def colour: String$/;"	m
@@ -44,16 +54,28 @@ maneSize	src/main/scala/EssentialScala.scala	/^      def maneSize: Int$/;"	m
 mtest	src/main/scala/EssentialScala.scala	/^      def mtest (i: Int): String = i match {$/;"	m
 node	src/main/scala/EssentialScala.scala	/^      val node = Node(leaf, leaf)$/;"	l
 one	src/main/scala/Globals.scala	/^  val one = 1$/;"	l
+perimeter	src/main/scala/Shapes.scala	/^    def perimeter: Double$/;"	m
+perimeter	src/main/scala/Shapes.scala	/^    val perimeter = (2*Pi*radius)$/;"	l
+perimeter	src/main/scala/Shapes.scala	/^    val perimeter = 2 * (sideA + sideB)$/;"	l
 playground	src/test/scala/testExample.scala	/^package playground$/;"	p
 print	src/main/scala/EssentialScala.scala	/^    def print = println(s"this is a $colour cat, it says $sound")$/;"	m
 print	src/main/scala/EssentialScala.scala	/^    def print = println(s"this is a $colour lion, it says $sound. behold his ${if (maneSize < 10) "tiny" else "massive"} mane!  ")$/;"	m
 print	src/main/scala/EssentialScala.scala	/^    def print: Unit$/;"	m
+putln	src/main/scala/Shapes.scala	/^    def putln: Option[Unit] = Some(println(s"i have $sides sides, making my perimeter $perimeter, and area $area"))$/;"	m
+putln	src/main/scala/Shapes.scala	/^    def putln: Option[Unit]$/;"	m
 resLeaf	src/main/scala/EssentialScala.scala	/^      val resLeaf = leaf.sum()$/;"	l
 resLeafNode	src/main/scala/EssentialScala.scala	/^      val resLeafNode = leaf.sum(node)$/;"	l
 resNode	src/main/scala/EssentialScala.scala	/^      val resNode = node.sum()$/;"	l
 run	src/main/scala/EssentialScala.scala	/^  def run {$/;"	m
+run	src/main/scala/Shapes.scala	/^  def run { $/;"	m
 scala	project/versions.scala	/^  def scala = "2.12.10"$/;"	m
 scalatest	project/versions.scala	/^  def scalatest = "3.0.5"$/;"	m
+sideA	src/main/scala/Shapes.scala	/^    def sideA: Double $/;"	m
+sideA	src/main/scala/Shapes.scala	/^    val sideA, sideB = side$/;"	l
+sideB	src/main/scala/Shapes.scala	/^    def sideB: Double$/;"	m
+sides	src/main/scala/Shapes.scala	/^    def sides: Int$/;"	m
+sides	src/main/scala/Shapes.scala	/^    val sides = 0$/;"	l
+sides	src/main/scala/Shapes.scala	/^    val sides = 4$/;"	l
 simpleMonadicPrint	src/main/scala/EssentialScala.scala	/^    val simpleMonadicPrint: Any => Option[Unit] = s => Some(println(s))$/;"	l
 sound	src/main/scala/EssentialScala.scala	/^      def sound: String$/;"	m
 sound	src/main/scala/EssentialScala.scala	/^    def sound: String$/;"	m

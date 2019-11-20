@@ -1,2 +1,2 @@
-amm -w src/main/scala/EssentialScala.scala
+amm -w src/main/scala/$1.scala
 
