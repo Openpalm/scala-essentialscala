@@ -9,6 +9,8 @@ BadData	src/test/scala/testExample.scala	/^  case class BadData[A,B](data: Eithe
 CATS	src/main/scala/EssentialScala.scala	/^object CATS {$/;"	c
 Cat	src/main/scala/EssentialScala.scala	/^  case class Cat (colour: String, sound: String) extends Feline {$/;"	c
 Circle	src/main/scala/Shapes.scala	/^  final case class Circle(radius: Double) extends Shape {$/;"	c
+Color	src/main/scala/Shapes.scala	/^    case class Color  (R: Int, G: Int, B: Int, V: Int = 0)$/;"	c
+Color	src/main/scala/Shapes.scala	/^ sealed  trait Color {$/;"	t
 Feline	src/main/scala/EssentialScala.scala	/^  trait Feline {$/;"	t
 Globals	src/main/scala/Globals.scala	/^object Globals {$/;"	c
 GoodData	src/test/scala/testExample.scala	/^  case class GoodData[A,B](data: Either[A,B]) extends TestData[A,B]$/;"	c
@@ -18,7 +20,7 @@ Node	src/main/scala/EssentialScala.scala	/^      case class Node(left: Tree, rig
 Printable	src/main/scala/Shapes.scala	/^  trait Printable { $/;"	t
 Rectangle	src/main/scala/Shapes.scala	/^  final case class Rectangle(sideA: Double, sideB: Double) extends Rectangular { $/;"	c
 Rectangular	src/main/scala/Shapes.scala	/^  sealed trait Rectangular extends Shape {$/;"	t
-Shape	src/main/scala/Shapes.scala	/^  sealed trait Shape extends Printable {$/;"	t
+Shape	src/main/scala/Shapes.scala	/^  sealed trait Shape extends Printable with Color {$/;"	t
 Shapes	src/main/scala/Shapes.scala	/^object Shapes { $/;"	c
 Square	src/main/scala/Shapes.scala	/^  final case class Square(side: Double) extends Rectangular {$/;"	c
 TREES	src/main/scala/EssentialScala.scala	/^object TREES {$/;"	c
@@ -39,12 +41,16 @@ area	src/main/scala/Shapes.scala	/^    def area: Double$/;"	m
 area	src/main/scala/Shapes.scala	/^    val area = Pi * Math.pow(radius,2)$/;"	l
 area	src/main/scala/Shapes.scala	/^    val area = sideA * sideB$/;"	l
 bill	src/main/scala/EssentialScala.scala	/^    val bill = {$/;"	l
+color	src/main/scala/Shapes.scala	/^    def color: Color$/;"	m
+color	src/main/scala/Shapes.scala	/^    val color: Color = Color(255, 255, 255) \/\/white$/;"	l
 colour	src/main/scala/EssentialScala.scala	/^      def colour: String$/;"	m
 colour	src/main/scala/EssentialScala.scala	/^    def colour: String$/;"	m
 com.app.globals	src/main/scala/Globals.scala	/^package com.app.globals$/;"	p
 createdAt	src/main/scala/EssentialScala.scala	/^    def createdAt: Date$/;"	m
 data	src/test/scala/testExample.scala	/^    def data: Either[A, B]$/;"	m
 id	src/main/scala/EssentialScala.scala	/^    def id: Int$/;"	m
+isDark	src/main/scala/Shapes.scala	/^    def isDark: Boolean = color.V > 50$/;"	m
+isLight	src/main/scala/Shapes.scala	/^    def isLight: Boolean = !isDark$/;"	m
 leaf	src/main/scala/EssentialScala.scala	/^      val leaf = Leaf(1)$/;"	l
 lionData	src/main/scala/EssentialScala.scala	/^    trait lionData {$/;"	t
 lion_massive	src/main/scala/EssentialScala.scala	/^  val lion_massive = Lion("blue", "roar", 10)$/;"	l
